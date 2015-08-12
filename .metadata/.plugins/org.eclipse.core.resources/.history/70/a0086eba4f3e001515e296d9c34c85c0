@@ -1,0 +1,20 @@
+Ti.UI.setBackgroundColor('#000');
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#fff"
+});
+
+var button = Ti.UI.createView({
+	color: "#444",
+	height: 100
+});
+mainWindow.add(button);
+
+var label = Ti.UI.createLabel({
+	text: "Keith Fawcett",
+	color: "black"
+});
+button.add(label);
+
+
+mainWindow.open();

@@ -1,0 +1,83 @@
+var openTable = function(){
+	var tableWindow = Ti.UI.createWindow({
+	backgroundColor: "#fff",
+	title: "Keith Fawcett"
+});
+tableWindow.add(table);
+navWindow.openWindow(tableWindow);
+};
+
+button.addEventListener("click", openTable);
+
+var aboutMe = {
+	"title": "Questions About Keith",
+	"footer": "If you want to know more just ask",
+	"rows":[
+		{"Title" : "What is your name?",
+		"Question": "What is your name?",
+		"Answer": "Keith Fawcett"},
+		{"Title" : "What is your chat name?",
+		"Question":"What is your chat user name, including the host?",
+		"Answer": ""},
+		{"Title" : "What is your time zone?",
+		"Question":"In which time zone do you reside?",
+		"Answer": ""},
+		{"Title" : "Why Mobile Development?",
+		"Question":"Why are you in the Mobile Development Program?",
+		"Answer": ""},
+		{"Title" : "Comfort with Javascript?",
+		"Question":"How comfortable are you with Javascript?",
+		"Answer": ""},
+		{"Title" : "Comfort with Titanium?",
+		"Question":"How comfortable are you with Titanium?",
+		"Answer": ""},
+		]
+};
+
+var table = Ti.UI.createTableView({
+	
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	table.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+};
+
+
+var tableSection = Ti.UI.createTableViewSection({
+	headerTitle: aboutMe.title,
+	footerTitle: aboutMe.footer
+});
+
+for(i=0, j=aboutMe.rows.length; i<j; i++){
+	var theRows = Ti.UI.createTableViewRow({
+		title: aboutMe.rows[i].Title,
+		question: aboutMe.rows[i].Question,
+		answer: aboutMe.rows[i].Answer,
+		hasChild: true
+	});
+	tableSection.add(theRows);
+};
+var rows = [tableSection];
+table.setData(rows);
+
+
+var infoWindowFunction = function(dataSource){
+	var infoWindow = Ti.UI.createWindow({
+		backgroundColor: "#fff",
+		title: dataSource.title
+	});
+
+	navWindow.openWindow(infoWindow);
+	
+	var QandA = Ti.UI.createLabel({
+	text: "Questioin"  + dataSource.Question  + "\n\n\n" + dataSource.Answer
+	});
+	infoWindow.add(QandA);	
+};
+		
+	
+table.addEventListener("click", function(event){
+	infoWindowFunction(event.source);
+});
+
+

@@ -1,0 +1,32 @@
+Ti.UI.setBackgroundColor('#000');
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#fff",
+	title: "About Me"
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var button = Ti.UI.createView({
+	backgroundColor: "#aaa",
+	height: 100,
+	width: 250
+});
+
+
+var label = Ti.UI.createLabel({
+	text: "Keith Fawcett",
+	color: "black",
+	font: {fontSize: 24}
+});
+
+
+
+var aboutMe = require("aboutMe");
+
+mainWindow.add(button);
+button.add(label);
+
+navWindow.open();
