@@ -1,7 +1,7 @@
 
 var aboutMe = {
 	"title": "Questions About Keith",
-	"footer": "If you want to know more just ask",
+	"footer": "If you want to know more just ask.",
 	"rows":[
 		{"Title" : "What is your name?",
 		"Question": "What is your name?",
@@ -14,7 +14,7 @@ var aboutMe = {
 		"Answer": "I reside in the pacific time zone."},
 		{"Title" : "Why Mobile Development?",
 		"Question":"Why are you in the Mobile Development Program?",
-		"Answer": "I am in Mobile Development because mobile is rapidly growing and I want to be a part of that industry."},
+		"Answer": "I am in Mobile Development because the mobile industry is rapidly growing and I want to be a part of that industry."},
 		{"Title" : "Comfort with Javascript?",
 		"Question":"How comfortable are you with Javascript?",
 		"Answer": "I am a little rusty but pretty comfortable with javascript."},
