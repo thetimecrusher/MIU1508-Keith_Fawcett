@@ -1,0 +1,250 @@
+Ti.UI.setBackgroundColor('#000');
+
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+
+
+
+var json = require("json");
+var largeImage;
+
+var tableWindow = Ti.UI.createWindow({
+	backgroundColor: "#fff",
+	title: json.phones.title,
+});
+
+var gridWindow = Ti.UI.createWindow({
+	backgroundColor: "#fff",
+	title: json.phones.title
+	
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: tableWindow
+});
+
+var navWindowTwo = Ti.UI.iOS.createNavigationWindow({
+	window: gridWindow
+});
+
+navWindow.orientationModes = [
+	Ti.UI.PORTRAIT,
+	Ti.UI.UPSIDE_PORTRAIT,
+	Ti.UI.LANDSCAPE_LEFT,
+	Ti.UI.LANDSCAPE_RIGHT
+];
+navWindowTwo.orientationModes = [
+	Ti.UI.PORTRAIT,
+	Ti.UI.UPSIDE_PORTRAIT,
+	Ti.UI.LANDSCAPE_LEFT,
+	Ti.UI.LANDSCAPE_RIGHT
+];
+
+var gridContainer = Ti.UI.createScrollView({
+	top: 0,
+	layout: "horizontal",
+	width: pWidth,
+	height: pHeight,
+	showVerticalScrolingIndicator: true,
+	backgroundColor: "#fef",
+});
+
+gridWindow.add(gridContainer);
+
+
+var gridButton =Ti.UI.createButton({
+	title: "Grid View",
+});
+
+tableWindow.setRightNavButton(gridButton);
+
+gridButton.addEventListener("click", function(e){
+
+		var listButton =Ti.UI.createButton({
+		title: "List View",
+	});
+	
+	gridWindow.setRightNavButton(listButton);
+	
+	listButton.addEventListener("click", function(e){
+		navWindow.open();
+		navWindowTwo.close();
+	});
+	navWindowTwo.open();
+	navWindow.close();
+});  
+var data = [];
+
+for(var i=0; i<json.phones.rows.length; i++){
+	
+var img = Ti.UI.createImageView({
+	image: json.phones.rows[i].Image,
+	height:120,
+	left: 10
+});
+	
+var title = Ti.UI.createLabel({
+	text: json.phones.rows[i].Title,
+	left: 150,
+	top: 15,
+	font: {fontSize: 16, fontFamily: "Arial"}
+});
+
+var price = Ti.UI.createLabel({
+	text: json.phones.rows[i].Price,
+	left: 150,
+	top: 45,
+	font: {fontSize: 14, fontFamily: "Arial"}
+
+});
+
+var row = Ti.UI.createTableViewRow({
+	height: "auto",
+	hasChild: "true",
+	name : json.phones.rows[i].Title,
+	image : json.phones.rows[i].Image,
+	price : json.phones.rows[i].Price,
+	os : json.phones.rows[i].OS,
+	screenSize : json.phones.rows[i].ScreenSize,
+	resolution : json.phones.rows[i].Resolution,
+	memory : json.phones.rows[i].Memory,
+	storage : json.phones.rows[i].Storage,
+	battery : json.phones.rows[i].Battery,
+	rearCam : json.phones.rows[i].RearCam,
+	frontCam : json.phones.rows[i].FrontCam,
+	desc : json.phones.rows[i].Description,
+	searchFilter: json.phones.rows[i].Title
+	
+});
+
+var searchBar = Ti.UI.createSearchBar({
+	showCancel: true,
+	hintText: "Search for a Phone"
+});
+
+row.add(img);
+row.add(title);
+row.add(price);
+
+data.push(row);
+
+var gridImg = Ti.UI.createImageView({
+	image: json.phones.rows[i].Image,
+	height:120,
+	left: 10
+});
+	
+var gridTitle = Ti.UI.createLabel({
+	text: json.phones.rows[i].Title,
+	align: "center",
+	top: gridImg.top + gridImg.height + 20,
+	font: {fontSize: 16, fontFamily: "Arial"}
+});
+
+var gridPrice = Ti.UI.createLabel({
+	text: json.phones.rows[i].Price,
+	align: "center",
+	top: gridTitle.top + 20,
+	font: {fontSize: 14, fontFamily: "Arial"}
+});
+
+var gridView = Ti.UI.createView({
+	height: 250,
+	width: 250,
+	hasChild: "true",
+	name : json.phones.rows[i].Title,
+	image : json.phones.rows[i].Image,
+	price : json.phones.rows[i].Price,
+	os : json.phones.rows[i].OS,
+	screenSize : json.phones.rows[i].ScreenSize,
+	resolution : json.phones.rows[i].Resolution,
+	memory : json.phones.rows[i].Memory,
+	storage : json.phones.rows[i].Storage,
+	battery : json.phones.rows[i].Battery,
+	rearCam : json.phones.rows[i].RearCam,
+	frontCam : json.phones.rows[i].FrontCam,
+	desc : json.phones.rows[i].Description,
+	searchFilter: json.phones.rows[i].Title
+	
+});
+gridView.add(gridImg);
+gridView.add(gridTitle);
+gridView.add(gridPrice);
+
+gridContainer.add(gridView);
+};
+
+var table = Ti.UI.createTableView({
+	data:data,
+	search: searchBar,
+	filterAttribute: "searchFilter"
+});
+
+tableWindow.add(table);
+
+var newPhone = function (e){
+	console.log(e.row.image);
+	var newPhoneWindow = Ti.UI.createWindow({
+		title: e.row.name,
+		backgroundColor: "#fff"
+	});
+	
+	 largeImage = Ti.UI.createImageView({
+		image:e.row.image,
+		title: e.row.name,
+		height: 250,
+		top: 20
+	});
+
+	
+	var phoneInfo = Ti.UI.createLabel({
+		top: largeImage.top + largeImage.height + 45,
+		left: 20,
+		text: e.row.price + "\n" + e.row.os + "\n" + e.row.screenSize + "\n" + e.row.resolution
+		+ "\n" + e.row.memory + "\n" + e.row.storage + "\n" + e.row.battery + "\n" + e.row.rearCam
+		+ "\n" + e.row.frontCam
+	});
+	var descript = Ti.UI.createLabel({
+		top: 550,
+		left: 30,
+		right: 30,
+		text: e.row.desc
+	});
+	
+	var container = Ti.UI.createScrollView({
+		left: 0,
+		right: 10,
+		showVerticalScrollIndicator: true
+	});
+	
+	navWindow.openWindow(newPhoneWindow);
+	newPhoneWindow.add(container);
+	container.add(largeImage);
+	container.add(phoneInfo);
+	container.add(descript);
+	
+	largeImage.addEventListener("click", function(e){
+	console.log(e);
+	
+	var fullPhoneWindow = Ti.UI.createWindow({
+		title: e.source.title,
+		backgroundColor: "#fff"
+	});
+	
+	fullImage = Ti.UI.createImageView({
+		image:e.source.image,
+		height: "100%"
+	});
+	navWindow.openWindow(fullPhoneWindow);
+	fullPhoneWindow.add(fullImage);
+});
+};
+
+table.addEventListener("click", newPhone);
+
+
+
+
+
+navWindow.open();
