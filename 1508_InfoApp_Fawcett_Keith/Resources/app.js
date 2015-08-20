@@ -388,7 +388,7 @@ gridContainer.addEventListener("click", function(e){
 	//create a new window
 	var fullPhoneWindow = Ti.UI.createWindow({
 		title: e.source.title,
-		backgroundColor: "#fff"
+		backgroundColor: "#ddd"
 	});
 	
 	//create a full sized image
