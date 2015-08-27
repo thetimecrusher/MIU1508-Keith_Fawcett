@@ -1,0 +1,35 @@
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Sign Up",
+});
+
+signUpView.addEventListener("click", function(){
+		navWindow.openWindow(signUpWindow);
+});
+
+var nameLabel = Ti.UI.createLabel({
+	text: "Name",
+	top: 50,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var nameField = Ti.UI.createTextField({
+	Top: nameLabel.top+nameLabel.height + 5,
+	height: 45,
+	width: "42%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "John",
+	paddingLeft: 5,
+	backgroundColor: "#fff"
+});
+var nameHint = Ti.UI.createLabel({
+	text: "Please enter your Name",
+	top: nameField.top+nameField.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+

@@ -1,0 +1,7 @@
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Sign Up"
+});
+
+
+exports.signUpWindow = signUpWindow;

@@ -1,0 +1,14 @@
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Sign Up",
+});
+var backButton =Ti.UI.createButton({
+	title: "Grid View",
+});
+signUpWindow.setLeftNavButton(Back);
+
+signUpView.addEventListener("click", function(){
+		navWindow.openWindow(signUpWindow);
+});
+
+

@@ -1,0 +1,81 @@
+Ti.include("SignUp.js");
+Ti.include("json.js");
+
+var racesWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: races.title,
+});
+
+var noButton = Ti.UI.createButton({
+	
+});
+racesWindow.setLeftNavButton(noButton);
+
+var logoutButton = Ti.UI.createButton({
+	title:"Logout"
+});
+racesWindow.setRightNavButton(logoutButton);
+
+logoutButton.addEventListener("click",function(){
+	navWindow.openWindow(welcomeWindow);
+});
+
+signInView.addEventListener("click", function(){
+	if(emailField.hasText()===true&&passwordField.hasText()===true){
+		navWindow.openWindow(racesWindow);
+	}else{alert("Please fill in all fields");
+	}
+});
+
+signUpView2.addEventListener("click", function(){
+	if(firstNameField.hasText()===true&&lastNameField.hasText()===true&&
+	emailField.hasText()===true&&passwordField.hasText()===true&&
+	retypePasswordField.hasText()===true){
+		if(passwordField.value===retypePasswordField.value){
+			navWindow.openWindow(racesWindow);
+		}else{
+			alert("The two passwords do not match");
+		}
+	}else{alert("Please fill in all fields");
+	}
+});
+
+var racesTable = Ti.UI.createTableView({
+});
+
+var tableSection = Ti.UI.createTableViewSection({
+
+});
+
+for(i=0, j=races.rows.length; i<j; i++){
+	var theRows = Ti.UI.createTableViewRow({
+		title: races.rows[i].Title,
+		distance: races.rows[i].Distance,
+		type: races.rows[i].Type,
+		description: races.rows[i].Description,
+		hasChild: true
+	});
+	tableSection.add(theRows);
+};
+
+var rows = [tableSection];
+racesTable.setData(rows);
+
+
+
+
+racesWindow.add(racesTable);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Sign Up"
+});
+
+
+var test = Ti.UI.createView({
+	backgroundColor: "#f00"
+});
+
+//container.add(test);

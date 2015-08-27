@@ -1,0 +1,11 @@
+var races = {
+	"title": "Races",
+	"rows":[
+		{"Title" : "Nexus 6",
+		"Distance" : "image/Nexus 6.png",
+		"Type" : " $499.99",
+		"Description": "asd;kfja"},
+		]
+};
+		
+exports.races = races;

@@ -1,0 +1,10 @@
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Races"
+});
+
+
+signInView.addEventListener("click", function(){
+	if(emailField.hasText==true){
+		navWindow.openWindow(signUpWindow);
+});

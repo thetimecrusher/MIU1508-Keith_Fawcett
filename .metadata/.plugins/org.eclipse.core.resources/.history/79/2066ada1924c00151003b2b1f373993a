@@ -1,0 +1,438 @@
+Titanium.UI.setBackgroundColor('#000');
+var json = require("json");
+
+var welcomeWindow=Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Welcome"
+});
+
+
+var navWindow=Ti.UI.iOS.createNavigationWindow({
+	window:welcomeWindow
+});
+navWindow.orientationModes = [
+	Ti.UI.PORTRAIT,
+	Ti.UI.UPSIDE_PORTRAIT,
+	Ti.UI.LANDSCAPE_LEFT,
+	Ti.UI.LANDSCAPE_RIGHT
+];
+
+var welcomeContainer = Ti.UI.createScrollView({
+	showVerticalScrollIndicator: true,
+});
+
+welcomeWindow.add(welcomeContainer);
+
+
+var emailLabel = Ti.UI.createLabel({
+	text: "Email",
+	top: 50,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var emailField = Ti.UI.createTextField({
+	Top: emailLabel.top+emailLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "johndoe@gmail.com",
+	paddingLeft: 5,
+	backgroundColor: "#fff"
+});
+var emailHint = Ti.UI.createLabel({
+	text: "Please enter your Email",
+	top: emailField.top+emailField.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+var passwordLabel = Ti.UI.createLabel({
+	text: "Password",
+	top: emailHint.top+emailHint.height + 20,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+});
+
+var passwordField = Ti.UI.createTextField({
+	Top: passwordLabel.top+passwordLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "Password",
+	paddingLeft: 5,
+	passwordMask: true,
+	backgroundColor: "#fff"
+});
+var passwordHint = Ti.UI.createLabel({
+	text: "Please enter your password",
+	top: passwordField.top+passwordField.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+
+welcomeWindow.addEventListener("click",function(){
+	passwordField.blur();
+	emailField.blur();
+});
+
+var signInView = Ti.UI.createView({
+	top: passwordHint.top + passwordHint.height + 50,
+	height: 45,
+	width: "70%",
+	left: "15%",
+	backgroundColor: "#383eff"
+});
+
+var signInLabel = Ti.UI.createLabel({
+	text: "Sign In",
+	color: "#fff",
+	font: {fontSize:16, fontFamily:"Arial"}
+});
+
+signInView.add(signInLabel);
+
+var notMemberLable = Ti.UI.createLabel({
+	top: signInView.top + signInView.height + 80,
+	height: 20,
+	text: "Not A Member?     Sign Up Now!",
+	font: {fontSize: 20, fontFamily: "Arial"}
+});
+
+var signUpView = Ti.UI.createView({
+	top: notMemberLable.top + notMemberLable.height + 30,
+	height: 45,
+	width: "70%",
+	left: "15%",
+	backgroundColor: "#383eff",
+	bottom: 50
+});
+
+var signUpLabel = Ti.UI.createLabel({
+	text: "Sign Up",
+	color: "#fff",
+	font: {fontSize:16, fontFamily:"Arial"}
+});
+signUpView.add(signUpLabel);
+
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Sign Up",
+});
+
+signUpView.addEventListener("click", function(){
+		navWindow.openWindow(signUpWindow);
+});
+ welcomeContainer.add(emailLabel,emailField,emailHint,passwordLabel,passwordField,
+		passwordHint,signInView,notMemberLable,signUpView);
+		
+var signUpContainer = Ti.UI.createScrollView({
+	showVerticalScrollIndicator: true,
+});
+signUpWindow.add(signUpContainer);
+
+
+
+
+
+var firstNameLabel = Ti.UI.createLabel({
+	text: "First Name",
+	top: 50,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var firstNameField = Ti.UI.createTextField({
+	Top: firstNameLabel.top+firstNameLabel.height + 5,
+	height: 45,
+	width: "42%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "John",
+	paddingLeft: 5,
+	backgroundColor: "#fff"
+});
+var firstNameHint = Ti.UI.createLabel({
+	text: "Please enter your First Name",
+	top: firstNameField.top+firstNameField.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+
+var lastNameLabel = Ti.UI.createLabel({
+	text: "Last Name",
+	top: 50,
+	height: 20,
+	width: "42%",
+	right: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var lastNameField = Ti.UI.createTextField({
+	Top: lastNameLabel.top+lastNameLabel.height + 5,
+	height: 45,
+	width: "42%",
+	right:"5%",
+	borderWidth: .3,
+	hintText: "Doe",
+	paddingLeft: 5,
+	backgroundColor: "#fff"
+});
+var lastNameHint = Ti.UI.createLabel({
+	text: "Please enter your Last Name",
+	top: lastNameField.top+lastNameField.height,
+	height: 10,
+	width: "42%",
+	right: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+
+var emailLabel = Ti.UI.createLabel({
+	text: "Email",
+	top: lastNameHint.top+lastNameHint.height + 20,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var emailField2 = Ti.UI.createTextField({
+	Top: emailLabel.top+emailLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "johndoe@gmail.com",
+	paddingLeft: 5,
+	backgroundColor: "#fff"
+});
+var emailHint = Ti.UI.createLabel({
+	text: "Please enter your Email",
+	top: emailField2.top+emailField2.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+
+var birthLabel = Ti.UI.createLabel({
+	text: "Birthday",
+	top: emailHint.top+emailHint.height + 20,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+});
+
+var setValue = new Date();
+setValue.setFullYear(1990);
+setValue.setMonth(5);
+setValue.setDate(15);
+
+
+var birthPicker = Ti.UI.createPicker({
+	Top: birthLabel.top+birthLabel.height + 5,
+	width: "90%",
+	left:"5%",
+	height:220,
+	selectionIndicator: true,
+	type: Ti.UI.PICKER_TYPE_DATE,
+	value: setValue,
+	});
+var birthHint = Ti.UI.createLabel({
+	text: "Please select your Birthday",
+	top: birthPicker.top+birthPicker.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+var passwordLabel = Ti.UI.createLabel({
+	text: "Password",
+	top: birthHint.top+birthHint.height + 20,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+});
+
+var passwordField2 = Ti.UI.createTextField({
+	Top: passwordLabel.top+passwordLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "Password",
+	paddingLeft: 5,
+	passwordMask: true,
+	backgroundColor: "#fff"
+});
+var passwordHint = Ti.UI.createLabel({
+	text: "Please enter a password 8-25 characters long",
+	top: passwordField2.top+passwordField2.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+var retypePasswordLabel = Ti.UI.createLabel({
+	text: "Retype Password",
+	top: passwordHint.top+passwordHint.height + 20,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+});
+
+var retypePasswordField = Ti.UI.createTextField({
+	Top: retypePasswordLabel.top+retypePasswordLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "Retype Password",
+	paddingLeft: 5,
+	passwordMask: true,
+	backgroundColor: "#fff"
+});
+var retypePasswordHint = Ti.UI.createLabel({
+	text: "Please retype your password",
+	top: retypePasswordField.top+retypePasswordField.height,
+	height: 10,
+	left: "5%",
+	font: {fontSize:12, fontFamily:"Arial"}
+});
+
+var signUpView2 = Ti.UI.createView({
+	top: retypePasswordHint.top + retypePasswordHint.height + 30,
+	height: 45,
+	width: "70%",
+	left: "15%",
+	backgroundColor: "#383eff",
+	bottom: 50
+});
+
+var signUpLabel = Ti.UI.createLabel({
+	text: "Sign Up",
+	color: "#fff",
+	font: {fontSize:16, fontFamily:"Arial"}
+});
+signUpView2.add(signUpLabel);
+
+
+signUpWindow.addEventListener("click",function(){
+	firstNameField.blur();
+	lastNameField.blur();
+	emailField.blur();
+	passwordField.blur();
+	retypePasswordField.blur();
+});
+
+signUpContainer.add(firstNameLabel,firstNameField,firstNameHint,lastNameLabel,
+	lastNameField,lastNameHint,emailLabel,emailField2,emailHint,birthLabel,birthPicker,
+	birthHint,passwordLabel,passwordField2,passwordHint,retypePasswordLabel,
+	retypePasswordField,retypePasswordHint,signUpView2);
+
+
+
+var racesWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: json.races.title,
+});
+
+
+signInView.addEventListener("click", function(){
+	if(emailField.hasText()===true&&passwordField.hasText()===true){
+		navWindow.openWindow(racesWindow);
+	}else{alert("Please fill in all fields");
+	}
+});
+
+signUpView2.addEventListener("click", function(){
+	if(firstNameField.hasText()===true&&lastNameField.hasText()===true&&
+	emailField2.hasText()===true&&passwordField2.hasText()===true&&
+	retypePasswordField.hasText()===true){
+		if(passwordField2.value===retypePasswordField.value){
+			navWindow.openWindow(racesWindow);
+		}else{
+			alert("The two passwords do not match");
+		}
+	}else{alert("Please fill in all fields");
+	}
+});
+
+var racesTable = Ti.UI.createTableView({
+});
+
+var tableSection = Ti.UI.createTableViewSection({
+
+});
+
+for(i=0, j=json.races.rows.length; i<j; i++){
+	var theRows = Ti.UI.createTableViewRow({
+		title: json.races.rows[i].Title,
+		location: json.races.rows[i].Location,
+		type: json.races.rows[i].Type,
+		description: json.races.rows[i].Description,
+		hasChild: true
+	});
+	tableSection.add(theRows);
+};
+
+var rows = [tableSection];
+racesTable.setData(rows);
+
+racesWindow.add(racesTable);
+
+racesTable.addEventListener("click",function(e){
+	console.log(e.source);
+
+	
+	var infoWindow = Ti.UI.createWindow({
+		backgroundColor: "#fff",
+		title: e.source.title
+	});
+// console.log(dataSource);
+	 navWindow.openWindow(infoWindow);
+	
+	// "Location": "Central Point, Oregon",
+		// "Type" : "Time Trial",
+		// "Date" : "March 7th, 14th, 21st",
+		// "Registration" : "Day of race registration only; begins at 7:30am",
+		// "Description": 
+	var infoContainer = Ti.UI.createScrollView({
+		showVerticalScrollIndicator: true,
+	});
+	infoWindow.add(infoContainer);
+	
+	var locationLabel = Ti.UI.createLabel({
+	text:"Location: " + e.source.location,
+	top: 50,
+	left: 15,
+	right: "5%",
+	font:{fontSize: 24, fontFamily: "Arial", fontWeight: "Bold"}
+	});	
+	
+	var typeLabel = Ti.UI.createLabel({
+	text:"Type: " + e.source.type,
+	top: 150,
+	left: 15,
+	right: "5%",
+	font:{fontSize: 24, fontFamily: "Arial", fontWeight: "Bold"}
+	});	
+
+infoContainer.add(locationLabel,typeLabel);
+	});
+
+
+
+navWindow.open();
+
+

@@ -1,0 +1,18 @@
+var signUpWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Races"
+});
+
+
+signInView.addEventListener("click", function(){
+	if(emailField.hasText()===true&&passwordField.hasText()===true){
+		navWindow.openWindow(signUpWindow);
+	}else{alert("Please fill in all fields");
+	}
+});
+signInView2.addEventListener("click", function(){
+	//if(emailField.hasText()===true&&passwordField.hasText()===true){
+		navWindow.openWindow(signUpWindow);
+	//}else{alert("Please fill in all fields");
+	//}
+});

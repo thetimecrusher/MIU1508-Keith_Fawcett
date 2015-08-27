@@ -1,0 +1,108 @@
+Titanium.UI.setBackgroundColor('#000');
+
+var welcomeWindow=Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Welcome"
+});
+
+var navWindow=Ti.UI.iOS.createNavigationWindow({
+	window:welcomeWindow
+});
+navWindow.orientationModes = [
+	Ti.UI.PORTRAIT,
+	Ti.UI.UPSIDE_PORTRAIT,
+	Ti.UI.LANDSCAPE_LEFT,
+	Ti.UI.LANDSCAPE_RIGHT
+];
+
+var container = Ti.UI.createScrollView({
+	
+});
+
+welcomeWindow.add(container);
+
+var emailLabel = Ti.UI.createLabel({
+	text: "Email",
+	top: 50,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var emailField = Ti.UI.createTextField({
+	Top: emailLabel.top+emailLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "johndoe@gmail.com",
+	paddingLeft: 5,
+	backgroundColor: "#fff"
+});
+var passwordLabel = Ti.UI.createLabel({
+	text: "Password",
+	top: emailField.top+emailField.height + 20,
+	height: 20,
+	left: "5%",
+	font: {fontSize:20, fontFamily:"Arial"}
+	
+});
+var passwordField = Ti.UI.createTextField({
+	Top: passwordLabel.top+passwordLabel.height + 5,
+	height: 45,
+	width: "90%",
+	left:"5%",
+	borderWidth: .3,
+	hintText: "Password",
+	paddingLeft: 5,
+	passwordMask: true,
+	backgroundColor: "#fff"
+});
+
+
+welcomeWindow.addEventListener("click",function(e){
+	passwordField.blur();
+	emailField.blur();
+});
+
+var signInView = Ti.UI.createView({
+	top: passwordField.top + passwordField.height + 50,
+	height: 45,
+	width: "70%",
+	left: "15%",
+	backgroundColor: "#383eff"
+});
+
+var signInLabel = Ti.UI.createLabel({
+	text: "Sign In",
+	color: "#fff",
+	font: {fontSize:16, fontFamily:"Arial"}
+});
+
+signInView.add(signInLabel);
+
+var notMemberLable = Ti.UI.createLabel({
+	top: signInView.top + signInView.height + 70,
+	height: 20,
+	text: "Not A Member?     Sign Up Now!",
+	font: {fontSize: 20, fontFamily: "Arial"}
+});
+
+var signUpView = Ti.UI.createView({
+	top: notMemberLable.top + notMemberLable.height + 50,
+	height: 45,
+	width: "70%",
+	left: "15%",
+	backgroundColor: "#383eff"
+});
+
+var signUpLabel = Ti.UI.createLabel({
+	text: "Sign Up",
+	color: "#fff",
+	font: {fontSize:16, fontFamily:"Arial"}
+});
+signUpView.add(signUpView);
+
+
+container.add(emailLabel, emailField,passwordLabel,passwordField,signInView,notMemberLable);
+navWindow.open();

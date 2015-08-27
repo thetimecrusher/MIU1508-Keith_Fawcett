@@ -1,0 +1,23 @@
+
+
+var racesWindow = Ti.UI.createWindow({
+	backgroundColor: "#eee",
+	title: "Races"
+});
+
+
+signInView.addEventListener("click", function(){
+	if(emailField.hasText()===true&&passwordField.hasText()===true){
+		navWindow.openWindow(racesWindow);
+	}else{alert("Please fill in all fields");
+	}
+});
+Ti.include("SignUp.js");
+signUpView2.addEventListener("click", function(){
+	if(firstNameField.hasText()===true&&lastNameField.hasText()===true&&
+	emailField.hasText()===true&&passwordField.hasText()===true&&
+	retypePasswordField.hasText()===true){
+		navWindow.openWindow(racesWindow);
+	}else{alert("Please fill in all fields");
+	}
+});

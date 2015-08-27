@@ -1,0 +1,51 @@
+dependencies: \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIListView.m \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIListView.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIView.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiEvaluator.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/KrollContext.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiToJS.h \
+  headers/JavaScriptCore/TiCore.h headers/JavaScriptCore/Ti.h \
+  headers/JavaScriptCore/TiBase.h headers/JavaScriptCore/TiContextRef.h \
+  headers/JavaScriptCore/TiObjectRef.h \
+  headers/JavaScriptCore/TiValueRef.h \
+  headers/JavaScriptCore/WebKitAvailability.h \
+  headers/JavaScriptCore/TiStringRef.h \
+  headers/JavaScriptCore/TiStringRefCF.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/KrollCallback.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/KrollObject.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiBindingRunLoop.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiAnimation.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiPoint.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiDimension.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiBase.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiThreading.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiPublicAPI.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiColor.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/ListenerEntry.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiModule.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUtils.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/WebFont.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiFile.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiBuffer.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiBlob.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/LayoutConstraint.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiGradient.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIListViewProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiViewProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiRect.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiViewTemplate.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIListSectionProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIListItem.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIListItemProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiSelectedCellbackgroundView.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUILabelProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUISearchBarProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/TiUIRefreshControlProxy.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/ImageLoader.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/APSHTTPClient/APSHTTPClient.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/APSHTTPClient/APSHTTPRequest.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/APSHTTPClient/APSHTTPResponse.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/APSHTTPClient/APSHTTPPostForm.h \
+  /Users/keithfawcett/Desktop/MID/Projects/1508_UtilityApp_Fawcett_Keith/build/iphone/Classes/APSHTTPClient/APSHTTPHelper.h
